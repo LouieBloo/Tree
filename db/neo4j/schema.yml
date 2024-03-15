@@ -1,0 +1,22 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Node to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.yml definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using neo4j:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+---
+:constraints:
+- CREATE CONSTRAINT `constraint_4947655f` FOR (n:`Node`) REQUIRE (n.`uuid`) IS UNIQUE
+- CREATE CONSTRAINT `constraint_c568c7ec` FOR (n:`Bird`) REQUIRE (n.`uuid`) IS UNIQUE
+- CREATE CONSTRAINT `constraint_dbcee0a4` FOR (n:`ActiveGraph::Migrations::SchemaMigration`)
+  REQUIRE (n.`migration_id`) IS UNIQUE
+:indexes: []
+:versions:
+- '20240314204759'
+- '20240314231535'

@@ -1,0 +1,4 @@
+development:
+  url: neo4j+s://f10cce09.databases.neo4j.io
+  username: neo4j
+  password: redacted
