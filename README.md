@@ -8,23 +8,23 @@ Nodes have a name property and 2 relationships with other nodes. They have 1 par
 Nodes also have many birds while birds only belong to 1 node. 
 
 # Creating nodes
-n1 = Node.create(name: "1")
+`n1 = Node.create(name: "1")
 n2 = Node.create(name: "2")
 n3 = Node.create(name: "3")
 n4 = Node.create(name: "4")
-n5 = Node.create(name: "5")
+n5 = Node.create(name: "5")`
 
 ## Linking parents
-n2.parent = n1
+`n2.parent = n1
 n3.parent = n1
 n4.parent = n2
-n5.parent = n2
+n5.parent = n2`
 
 ## Linking birds
-b1 = Bird.create(name: "b1")
+`b1 = Bird.create(name: "b1")
 b11 = Bird.create(name: "b11")
 
-n1.birds = [b1, b11]
+n1.birds = [b1, b11]`
 
 # Endpoints
 ## GET /common_ancestors?a=XXX&b=YYY
