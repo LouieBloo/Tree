@@ -8,15 +8,15 @@ class BirdsController < ApplicationController
             all_birds = []
             params[:nodes].each do |node|
                 target_node = Node.find_by(name: node)
-                # we can do validation here in case their is no node found, skipping for now
+                # we can do validation here in case there is no node found, skipping for now
                 found_birds = target_node.all_birds_from_descendants
 
                 if found_birds.present?
                     all_birds.concat(found_birds)
                 end
             end
-            # no specs for how we should return, just return the json representation of the birds in an array
-            render json: all_birds.flatten.uniq
+            # no specs for how we should return, just return the id and name of the birds in an array
+            render json: all_birds.flatten.uniq.map {|b| {id: b.id, name: b.name}}
         rescue => e
             # General error handling
             render json: { error: "An error occurred: #{e.message}" }, status: :internal_server_error
